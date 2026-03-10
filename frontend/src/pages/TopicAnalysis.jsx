@@ -59,7 +59,7 @@ const TopicAnalysis = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 p-4 lg:p-8 pt-32">
+    <div className="min-h-screen pt-32 pb-12 px-4 bg-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">

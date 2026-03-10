@@ -60,8 +60,8 @@ export const generateComprehensiveAnalysis = (profiles) => {
     // Advanced insights
     consistencyScore: consistencyData.score,
     consistencyLevel: consistencyData.level,
-    userClassification: classification,
-    platformBalanceInsight,
+    classification,
+    platformBalance,
     growthReadiness,
 
     // Platform-specific insights

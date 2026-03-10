@@ -16,12 +16,25 @@ const analysisReportSchema = new mongoose.Schema(
       default: []
     },
     suggestions: {
-      type: [String],
-      default: []
+      immediate: [String],
+      shortTerm: [String],
+      longTerm: [String]
     },
     consistencyScore: {
       type: Number,
       default: 0
+    },
+    classification: {
+      type: Object,
+      default: null
+    },
+    platformBalance: {
+      type: String,
+      default: ""
+    },
+    growthReadiness: {
+      type: Object,
+      default: null
     }
   },
   { timestamps: true }

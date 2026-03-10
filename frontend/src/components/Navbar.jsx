@@ -48,7 +48,7 @@ const Navbar = ({ onMenuClick }) => {
           <div className="hidden lg:flex items-center space-x-8">
             {token ? (
               <>
-                <Link
+                {/* <Link
                   to="/dashboard"
                   className="text-slate-300 hover:text-cyan-300 font-medium transition-colors duration-200"
                 >
@@ -59,7 +59,7 @@ const Navbar = ({ onMenuClick }) => {
                   className="text-slate-300 hover:text-cyan-300 font-medium transition-colors duration-200"
                 >
                   Connect
-                </Link>
+                </Link> */}
               </>
             ) : (
               !isAuthPage && (

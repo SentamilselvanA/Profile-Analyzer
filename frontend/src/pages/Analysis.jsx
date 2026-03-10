@@ -415,21 +415,57 @@ const Analysis = () => {
         </div>
 
         {/* Suggestions */}
-        <div className="p-6 rounded-xl border bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border-blue-500/20 backdrop-blur-sm">
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 mr-4">
-              <BoltIcon className="w-6 h-6 text-white" />
+        <div className="bg-slate-800/50 p-8 rounded-3xl border border-white/5 shadow-2xl">
+          <div className="flex items-center mb-8">
+            <div className="p-3 rounded-xl bg-emerald-500/20 mr-4">
+              <BoltIcon className="w-6 h-6 text-emerald-400" />
             </div>
-            <h3 className="text-xl font-semibold text-slate-100">Recommended Actions</h3>
+            <div>
+              <h3 className="text-2xl font-bold text-white">Action Plan</h3>
+              <p className="text-slate-400 text-sm">Actionable steps to improve your coding performance</p>
+            </div>
           </div>
-          <ul className="space-y-3">
-            {analysis.suggestions?.map((suggestion, index) => (
-              <li key={index} className="flex items-start text-slate-300">
-                <span className="text-blue-400 mr-2 mt-1 font-bold">{index + 1}.</span>
-                <span>{suggestion}</span>
-              </li>
-            ))}
-          </ul>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Immediate */}
+            <div className="space-y-4">
+              <h4 className="text-xs font-black text-emerald-400 uppercase tracking-widest border-b border-emerald-500/20 pb-2">Immediate (1-2 Weeks)</h4>
+              <ul className="space-y-3">
+                {analysis.suggestions?.immediate?.map((s, i) => (
+                  <li key={i} className="flex items-start text-sm text-slate-300 group">
+                    <span className="text-emerald-500 mr-2 font-bold group-hover:scale-125 transition-transform">→</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Short Term */}
+            <div className="space-y-4">
+              <h4 className="text-xs font-black text-blue-400 uppercase tracking-widest border-b border-blue-500/20 pb-2">Short Term (1-2 Months)</h4>
+              <ul className="space-y-3">
+                {analysis.suggestions?.shortTerm?.map((s, i) => (
+                  <li key={i} className="flex items-start text-sm text-slate-300 group">
+                    <span className="text-blue-500 mr-2 font-bold group-hover:scale-125 transition-transform">→</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Long Term */}
+            <div className="space-y-4">
+              <h4 className="text-xs font-black text-purple-400 uppercase tracking-widest border-b border-purple-500/20 pb-2">Long Term (Strategic)</h4>
+              <ul className="space-y-3">
+                {analysis.suggestions?.longTerm?.map((s, i) => (
+                  <li key={i} className="flex items-start text-sm text-slate-300 group">
+                    <span className="text-purple-500 mr-2 font-bold group-hover:scale-125 transition-transform">→</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Coding Persona and Growth Readiness */}
@@ -457,9 +493,9 @@ const Analysis = () => {
               <h3 className="text-xl font-semibold text-slate-100">Growth Readiness</h3>
             </div>
             <div className="space-y-3">
-              <div className="text-lg font-semibold text-cyan-400">High Potential</div>
+              <div className="text-lg font-semibold text-cyan-400">{analysis.growthReadiness?.level || "High Potential"}</div>
               {analysis.growthReadiness && (
-                <p className="text-slate-300">{analysis.growthReadiness}</p>
+                <p className="text-slate-300">{analysis.growthReadiness.nextMilestone}</p>
               )}
             </div>
           </div>

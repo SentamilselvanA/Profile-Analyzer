@@ -583,7 +583,7 @@ const Dashboard = () => {
             {analysis.growthReadiness && (
               <InsightCard
                 title="Growth Readiness"
-                content={analysis.growthReadiness}
+                content={`${analysis.growthReadiness.level}: ${analysis.growthReadiness.nextMilestone}`}
                 icon={BoltIcon}
                 colorClass="bg-gradient-to-br from-purple-500 to-pink-500"
               />
