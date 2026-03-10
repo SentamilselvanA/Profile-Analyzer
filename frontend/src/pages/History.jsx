@@ -62,7 +62,7 @@ const History = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0f172a] p-4 lg:p-8">
+    <div className="min-h-screen bg-slate-900 p-4 lg:p-8 pt-20">
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-lg mb-2">

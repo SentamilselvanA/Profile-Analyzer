@@ -63,7 +63,7 @@ const Reports = () => {
   const report = data ? data[activeTab] : null;
 
   return (
-    <div className="min-h-screen bg-slate-900 p-4 lg:p-8">
+    <div className="min-h-screen bg-slate-900 p-4 lg:p-8 pt-20">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
