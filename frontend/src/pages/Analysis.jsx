@@ -181,7 +181,7 @@ const Analysis = () => {
   const maxDifficulty = Math.max(...difficultyData.map(d => d.value));
 
   return (
-    <div className="min-h-screen bg-slate-900 pt-20">
+    <div className="min-h-screen bg-slate-900 pt-32">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 pb-8">
         <div className="max-w-7xl mx-auto px-6 py-8">
