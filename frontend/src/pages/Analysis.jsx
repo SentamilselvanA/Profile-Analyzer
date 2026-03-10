@@ -14,6 +14,7 @@ import {
   StarIcon
 } from "@heroicons/react/24/outline";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { exportToPdf } from '../utils/exportPdf';
 
 const Analysis = () => {
   const [analysis, setAnalysis] = useState(null);
@@ -195,6 +196,13 @@ const Analysis = () => {
             </div>
             <div className="flex items-center gap-4">
               <button
+                onClick={() => exportToPdf('analysis-content', 'performance-analysis.pdf')}
+                className="flex items-center gap-2 px-6 py-3 bg-white hover:bg-slate-100 text-slate-900 font-bold rounded-lg transition-all duration-200 transform hover:scale-105"
+              >
+                <ArrowPathIcon className="w-5 h-5" />
+                Export as PDF
+              </button>
+              <button
                 onClick={refreshAnalysis}
                 disabled={isRefreshing}
                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -208,7 +216,7 @@ const Analysis = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+      <div className="max-w-7xl mx-auto px-6 py-8 space-y-8" id="analysis-content">
         {/* Consistency Score Section */}
         <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-white/10 rounded-xl p-8 backdrop-blur-sm">
           <div className="flex flex-col lg:flex-row items-center gap-8">
