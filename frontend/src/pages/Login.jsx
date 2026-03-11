@@ -27,7 +27,6 @@ const Login = () => {
       navigate("/dashboard");
     } catch (error) {
       alert(error.response?.data?.message || "Login failed ");
-      navigate("/dashboard");
       
     } finally {
       setIsLoading(false);
